@@ -1,0 +1,22 @@
+﻿@model Nop.Plugin.Themes.NopGadget.Areas.Admin.Models.ThemeSettingsModel
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="card-body">
+    <form asp-action="Configure" method="post">
+        <div class="form-group">
+            <label asp-for="PrimaryColor"></label>
+            <input asp-for="PrimaryColor" class="form-control" />
+            <span asp-validation-for="PrimaryColor" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FontFamily"></label>
+            <input asp-for="FontFamily" class="form-control" />
+            <span asp-validation-for="FontFamily" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

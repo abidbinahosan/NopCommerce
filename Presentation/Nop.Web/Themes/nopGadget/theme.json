@@ -1,0 +1,7 @@
+﻿{
+  "SystemName": "nopGadget",
+  "FriendlyName": "Nop Gadget",
+  "SupportRTL": true,
+  "PreviewImageUrl": "~/Themes/nopGadget/preview.jpg",
+  "PreviewText": "The theme is a replica of nopGadget theme from Nop Station"
+}

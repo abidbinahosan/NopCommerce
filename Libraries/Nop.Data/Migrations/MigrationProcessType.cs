@@ -18,5 +18,7 @@ public enum MigrationProcessType
     /// <summary>
     /// Update
     /// </summary>
-    Update
+    Update,
+    Data,
+    Plugin
 }
