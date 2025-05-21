@@ -1,0 +1,69 @@
+﻿@model NopStation.Plugin.Theme.NopGadget.Domain.NopGadgetSettings
+
+@{
+    // Get button color with fallback
+    var buttonColor = !string.IsNullOrEmpty(Model.ButtonColor)
+        ? Model.ButtonColor
+        : "#ff4f00";
+
+    // Get theme color with fallback
+    var themeColor = !string.IsNullOrEmpty(Model.ThemeColor)
+        ? Model.ThemeColor
+        : "#4ab2f1";
+}
+
+<!-- Theme customization styles -->
+<style>
+    /* Apply button color to various theme elements */
+    .search-box .search-box-button,
+    .header-links .ico-cart .cart-qty,
+    .mini-shopping-cart input[type="button"],
+    .product-grid .item-box .buttons button,
+    .home-page-category-grid .title a,
+    .pager li span,
+    .newsletter-subscribe-button,
+    .cart-button,
+    .checkout-button,
+    .add-to-cart-button,
+    .write-review .button-1,
+    .new-comment .button-1,
+    .contact-page .button-1,
+    .login-page .button-1,
+    .registration-page .button-1,
+    .registration-result-page .button-1,
+    .password-recovery-page .button-1,
+    .account-page .button-1,
+    .return-request-page .button-1,
+    .blog-page .button-1,
+    .news-page .button-1 {
+        background-color: @buttonColor !important;
+    }
+
+    /* Apply theme color to various elements */
+    .header-menu > ul > li > a:hover,
+    .header-menu > ul > li:hover > a,
+    .footer-block .list a:hover,
+    .footer-powered-by a,
+    .footer-disclaimer a,
+    .home-page .topic-block-title h2,
+    .breadcrumb a:hover,
+    .category-grid .item-box .sub-category-item:hover h2 a,
+    .manufacturer-grid .item-box .title a:hover,
+    .vendor-grid .item-box .title a:hover,
+    .master-wrapper-content h1,
+    .product-name a:hover,
+    .news-list-homepage .news-items .news-date,
+    .news-item-page .news-date {
+        color: @themeColor !important;
+    }
+
+    /* Add a border color using theme color */
+    .header-menu > ul > li > a:hover,
+    .header-menu > ul > li:hover > a,
+    .mini-shopping-cart input[type="button"]:hover,
+    .product-grid .item-box .buttons button:hover,
+    .write-review .button-1:hover,
+    .new-comment .button-1:hover {
+        border-color: @themeColor !important;
+    }
+</style>

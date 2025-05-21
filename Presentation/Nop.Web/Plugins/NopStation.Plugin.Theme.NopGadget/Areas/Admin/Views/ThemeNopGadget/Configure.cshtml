@@ -41,8 +41,15 @@
     </div>
 </form>
 
+<!-- Add the script here -->
 <script>
-    $(document).ready(function() {
-        // Add any additional JavaScript needed for the configuration page
+    $(document).ready(function () {
+        $('form').on('keydown', function (e) {
+            // Prevent form submit on Enter key if not from textarea or not wanted
+            if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                return false;
+            }
+        });
     });
 </script>
