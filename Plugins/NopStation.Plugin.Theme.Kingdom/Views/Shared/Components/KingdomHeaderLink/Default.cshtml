@@ -1,0 +1,20 @@
+﻿@model HeaderLinkModel
+
+@if (Model.Link1.Enabled)
+{
+    <div class="header-link-top header-terms">
+        <a href="@Model.Link1.Link">
+            <img src="@Model.Link1.Icon.FullSizeImageUrl" alt="@Model.Link1.Icon.AlternateText" title="@Model.Link1.Icon.Title">
+            @Model.Link1.Title
+        </a>
+    </div>
+}
+@if (Model.Link2.Enabled)
+{
+    <div class="header-link-top header-terms">
+        <a href="@Model.Link2.Link">
+            <img src="@Model.Link2.Icon.FullSizeImageUrl" alt="@Model.Link2.Icon.AlternateText" title="@Model.Link2.Icon.Title">
+            @Model.Link2.Title
+        </a>
+    </div>
+}

@@ -1,0 +1,10 @@
+﻿Starting theme installation...
+Running migrations...
+Migrations completed successfully.
+Plugin path: C:\Users\BS00754\Abid\SBU Work\Pluggable Theme\nopCommerce_4.80.4_Source\src\Presentation\Nop.Web\Plugins\NopStation.Plugin.Theme.NopGadget\Themes\NopGadget
+Theme destination path: C:\Users\BS00754\Abid\SBU Work\Pluggable Theme\nopCommerce_4.80.4_Source\src\Presentation\Nop.Web\Themes\NopGadget
+Copied file: preview.png
+Copied file: theme.json
+Copied file: _ViewStart.cshtml
+Copied file: Default.cshtml
+Theme files copied successfully.

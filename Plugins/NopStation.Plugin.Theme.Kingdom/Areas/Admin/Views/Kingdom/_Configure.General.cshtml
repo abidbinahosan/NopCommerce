@@ -1,0 +1,209 @@
+﻿@model ConfigurationModel
+
+<div class="card-body">
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="PhoneNumber_OverrideForStore" asp-input="PhoneNumber" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="PhoneNumber" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="PhoneNumber" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="InstagramLink_OverrideForStore" asp-input="InstagramLink" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="InstagramLink" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="InstagramLink" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="PinterestLink_OverrideForStore" asp-input="PinterestLink" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="PinterestLink" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="PinterestLink" />
+        </div>
+    </div>
+
+    @(await Html.LocalizedEditorAsync<ConfigurationModel, ConfigurationLocalizedModel>("contact-us-settings-localized",
+        @<div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-override-store-checkbox asp-for="FooterContactUsText_OverrideForStore" asp-input="@Model.Locales[item].FooterContactUsText" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="@Model.Locales[item].FooterContactUsText" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="@Model.Locales[item].FooterContactUsText" asp-template="RichEditor" />
+                </div>
+            </div>
+            <input type="hidden" asp-for="@Model.Locales[item].LanguageId" />
+        </div>
+        ,
+        @<div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-override-store-checkbox asp-for="FooterContactUsText_OverrideForStore" asp-input="FooterContactUsText" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="FooterContactUsText" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="FooterContactUsText" asp-template="RichEditor" />
+                </div>
+            </div>
+        </div>
+        @*,
+        //localizable settings per store (overridden store settings) are not supported yet
+        true*@
+        ))
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="HideDesignedByNopStationAtFooter_OverrideForStore" asp-input="HideDesignedByNopStationAtFooter" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="HideDesignedByNopStationAtFooter" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="HideDesignedByNopStationAtFooter" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="ShowLogoAtFooter_OverrideForStore" asp-input="ShowLogoAtFooter" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="ShowLogoAtFooter" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="ShowLogoAtFooter" />
+        </div>
+    </div>
+    <nop-nested-setting asp-for="ShowLogoAtFooter">
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-override-store-checkbox asp-for="FooterLogoPictureId_OverrideForStore" asp-input="FooterLogoPictureId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                <nop-label asp-for="FooterLogoPictureId" />
+            </div>
+            <div class="col-md-9">
+                <nop-editor asp-for="FooterLogoPictureId" />
+            </div>
+        </div>
+    </nop-nested-setting>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="ShowSupportedCardsAtFooter_OverrideForStore" asp-input="ShowSupportedCardsAtFooter" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="ShowSupportedCardsAtFooter" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="ShowSupportedCardsAtFooter" />
+        </div>
+    </div>
+    <nop-nested-setting asp-for="ShowSupportedCardsAtFooter">
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-override-store-checkbox asp-for="FooterSupportedCardsPictureId_OverrideForStore" asp-input="FooterSupportedCardsPictureId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                <nop-label asp-for="FooterSupportedCardsPictureId" />
+            </div>
+            <div class="col-md-9">
+                <nop-editor asp-for="FooterSupportedCardsPictureId" />
+            </div>
+        </div>
+    </nop-nested-setting>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="ShowSupportedCardsInProductDetailsPage_OverrideForStore" asp-input="ShowSupportedCardsInProductDetailsPage" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="ShowSupportedCardsInProductDetailsPage" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="ShowSupportedCardsInProductDetailsPage" />
+        </div>
+    </div>
+    <nop-nested-setting asp-for="ShowSupportedCardsInProductDetailsPage">
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-override-store-checkbox asp-for="ProductDetailsPageSupportedCardsPictureId_OverrideForStore" asp-input="ProductDetailsPageSupportedCardsPictureId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                <nop-label asp-for="ProductDetailsPageSupportedCardsPictureId" />
+            </div>
+            <div class="col-md-9">
+                <nop-editor asp-for="ProductDetailsPageSupportedCardsPictureId" />
+            </div>
+        </div>
+    </nop-nested-setting>
+
+
+
+
+
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="EnableLoginBoxAtHeader_OverrideForStore" asp-input="EnableLoginBoxAtHeader" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="EnableLoginBoxAtHeader" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="EnableLoginBoxAtHeader" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="EnableImageLazyLoad_OverrideForStore" asp-input="EnableImageLazyLoad" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="EnableImageLazyLoad" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="EnableImageLazyLoad" />
+        </div>
+    </div>
+    <nop-nested-setting asp-for="EnableImageLazyLoad">
+        <div class="form-group row" id="pnlLazyLoadPictureId">
+            <div class="col-md-3">
+                <nop-override-store-checkbox asp-for="LazyLoadPictureId_OverrideForStore" asp-input="LazyLoadPictureId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                <nop-label asp-for="LazyLoadPictureId" />
+            </div>
+            <div class="col-md-9">
+                <nop-editor asp-for="LazyLoadPictureId" />
+            </div>
+        </div>
+    </nop-nested-setting>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="HideReviewInProductBox_OverrideForStore" asp-input="HideReviewInProductBox" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="HideReviewInProductBox" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="HideReviewInProductBox" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="EnableStickyHeader_OverrideForStore" asp-input="EnableStickyHeader" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="EnableStickyHeader" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="EnableStickyHeader" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="HideProductBoxButtonsOnMobile_OverrideForStore" asp-input="HideProductBoxButtonsOnMobile" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="HideProductBoxButtonsOnMobile" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="HideProductBoxButtonsOnMobile" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="NuberOfItemsToShowInProductFilters_OverrideForStore" asp-input="NuberOfItemsToShowInProductFilters" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="NuberOfItemsToShowInProductFilters" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="NuberOfItemsToShowInProductFilters" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="CustomCss_OverrideForStore" asp-input="CustomCss" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="CustomCss" />
+        </div>
+        <div class="col-md-9">
+            <nop-textarea asp-for="CustomCss" rows="10"></nop-textarea>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@model NopStation.Plugin.Theme.NopGadget.Areas.Admin.Models.ConfigurationModel
+
+<div class="card-body">
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="ButtonColor" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="ButtonColor" />
+            <span asp-validation-for="ButtonColor"></span>
+            <div class="form-text">
+                @T("Admin.NopStation.Theme.NopGadget.Fields.ButtonColor.Hint")
+            </div>
+            <div style="margin-top: 10px;">
+                <div style="display: inline-block; width: 24px; height: 24px; border: 1px solid #ccc; background-color: @Model.ButtonColor;"></div>
+                <span style="vertical-align: super; margin-left: 10px;">@T("Admin.NopStation.Theme.NopGadget.Fields.ButtonColor.Preview")</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#@Html.IdFor(model => model.ButtonColor)").on("change", function() {
+            // Update the color preview when value changes
+            var colorValue = $(this).val();
+            $(this).closest(".form-group").find("div[style*='background-color']").css("background-color", colorValue);
+        });
+    });
+</script>

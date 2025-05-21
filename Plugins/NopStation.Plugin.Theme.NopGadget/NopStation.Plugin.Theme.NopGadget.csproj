@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <Copyright>SOME_COPYRIGHT</Copyright>
     <Company>YOUR_COMPANY</Company>
     <Authors>SOME_AUTHORS</Authors>
@@ -16,220 +16,282 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="plugin.json" />
+    <None Remove="Themes\theme.json" />
   </ItemGroup>
-    <ItemGroup>
-    <ProjectReference Include="$(SolutionDir)Presentation\Nop.Web.Framework\Nop.Web.Framework.csproj" />
+  <ItemGroup>
+    <None Update="plugin.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Themes/theme.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(SolutionDir)\Presentation\Nop.Web.Framework\Nop.Web.Framework.csproj" />
     <ProjectReference Include="..\..\Libraries\Nop.Core\Nop.Core.csproj" />
     <ProjectReference Include="..\..\Libraries\Nop.Data\Nop.Data.csproj" />
     <ProjectReference Include="..\..\Libraries\Nop.Services\Nop.Services.csproj" />
-    <PackageReference Include="MvcSiteMapProvider.MVC5.Core" Version="4.6.26" />
-      <ClearPluginAssemblies Include="$(SolutionDir)Build\ClearPluginAssemblies.proj" />
+    <ProjectReference Include="..\..\Presentation\Nop.Web\Nop.Web.csproj" />
+    <ClearPluginAssemblies Include="$(SolutionDir)\Build\ClearPluginAssemblies.proj" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\print.css">
+    <Content Include="Themes\NopGadget\Content\css\print.css">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\css\styles.css">
+    <Content Include="Themes\NopGadget\Content\css\styles.css">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\css\styles.rtl.css">
+    <Content Include="Themes\NopGadget\Content\css\styles.rtl.css">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\ajax-loader-small.gif">
+    <Content Include="Themes\NopGadget\Content\images\ajax-loader-small.gif">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\back-button.png">
+    <Content Include="Themes\NopGadget\Content\images\back-button.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\calendar-next.png">
+    <Content Include="Themes\NopGadget\Content\images\calendar-next.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\calendar-prev.png">
+    <Content Include="Themes\NopGadget\Content\images\calendar-prev.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\close.png">
+    <Content Include="Themes\NopGadget\Content\images\close.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\compare-button.png">
+    <Content Include="Themes\NopGadget\Content\images\compare-button.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\details.png">
+    <Content Include="Themes\NopGadget\Content\images\details.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\discontinued-product-icon.png">
+    <Content Include="Themes\NopGadget\Content\images\discontinued-product-icon.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\download-button.png">
+    <Content Include="Themes\NopGadget\Content\images\download-button.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\edit.png">
+    <Content Include="Themes\NopGadget\Content\images\edit.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\edit_.png">
+    <Content Include="Themes\NopGadget\Content\images\edit_.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\email-button.png">
+    <Content Include="Themes\NopGadget\Content\images\email-button.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\eye-closed.png">
+    <Content Include="Themes\NopGadget\Content\images\eye-closed.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\eye.png">
+    <Content Include="Themes\NopGadget\Content\images\eye.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\first.png">
+    <Content Include="Themes\NopGadget\Content\images\first.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\last.png">
+    <Content Include="Themes\NopGadget\Content\images\last.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\loading.gif">
+    <Content Include="Themes\NopGadget\Content\images\loading.gif">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\logo.png">
+    <Content Include="Themes\NopGadget\Content\images\logo.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\menu-icon.png">
+    <Content Include="Themes\NopGadget\Content\images\menu-icon.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\move.png">
+    <Content Include="Themes\NopGadget\Content\images\move.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\new.png">
+    <Content Include="Themes\NopGadget\Content\images\new.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\next.png">
+    <Content Include="Themes\NopGadget\Content\images\next.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\pointer.png">
+    <Content Include="Themes\NopGadget\Content\images\pointer.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\prev.png">
+    <Content Include="Themes\NopGadget\Content\images\prev.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\rating1.png">
+    <Content Include="Themes\NopGadget\Content\images\rating1.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\rating2.png">
+    <Content Include="Themes\NopGadget\Content\images\rating2.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\remove.png">
+    <Content Include="Themes\NopGadget\Content\images\remove.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\remove_.png">
+    <Content Include="Themes\NopGadget\Content\images\remove_.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\reply.png">
+    <Content Include="Themes\NopGadget\Content\images\reply.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\retry.png">
+    <Content Include="Themes\NopGadget\Content\images\retry.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\return.png">
+    <Content Include="Themes\NopGadget\Content\images\return.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\rss.png">
+    <Content Include="Themes\NopGadget\Content\images\rss.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\search.png">
+    <Content Include="Themes\NopGadget\Content\images\search.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\shipping.png">
+    <Content Include="Themes\NopGadget\Content\images\shipping.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\shopping-bag.png">
+    <Content Include="Themes\NopGadget\Content\images\shopping-bag.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\social-sprite.png">
+    <Content Include="Themes\NopGadget\Content\images\social-sprite.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\subscribe-button.png">
+    <Content Include="Themes\NopGadget\Content\images\subscribe-button.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\toggle-black.png">
+    <Content Include="Themes\NopGadget\Content\images\toggle-black.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\toggle-gray.png">
+    <Content Include="Themes\NopGadget\Content\images\toggle-gray.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\toggle-white.png">
+    <Content Include="Themes\NopGadget\Content\images\toggle-white.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\topic-type1.png">
+    <Content Include="Themes\NopGadget\Content\images\topic-type1.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\topic-type2.png">
+    <Content Include="Themes\NopGadget\Content\images\topic-type2.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\topic-type3.png">
+    <Content Include="Themes\NopGadget\Content\images\topic-type3.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\view-grid.png">
+    <Content Include="Themes\NopGadget\Content\images\view-grid.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\view-list.png">
+    <Content Include="Themes\NopGadget\Content\images\view-list.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\vote-down-selected.png">
+    <Content Include="Themes\NopGadget\Content\images\vote-down-selected.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\vote-down.png">
+    <Content Include="Themes\NopGadget\Content\images\vote-down.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\vote-up-selected.png">
+    <Content Include="Themes\NopGadget\Content\images\vote-up-selected.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\vote-up.png">
+    <Content Include="Themes\NopGadget\Content\images\vote-up.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\watch.png">
+    <Content Include="Themes\NopGadget\Content\images\watch.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Content\images\wishlist-button.png">
+    <Content Include="Themes\NopGadget\Content\images\wishlist-button.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Themes\NopGadget\preview.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="plugin.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Shared\Components\HeaderLinks\Default.cshtml">
+    <Content Include="Themes\NopGadget\Views\Shared\Components\HeaderLinks\Default.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Views\Shared\Components\TopMenu\Default.cshtml">
+    <Content Include="Themes\NopGadget\Views\Shared\Components\TopMenu\Default.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Views\Shared\Head.cshtml">
+    <Content Include="Themes\NopGadget\Views\Shared\Head.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Views\Shared\_Header.cshtml">
+    <Content Include="Themes\NopGadget\Views\Shared\_Header.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Views\Shared\_Root.Head.cshtml">
+    <Content Include="Themes\NopGadget\Views\Shared\_Root.Head.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Views\_ViewImports.cshtml">
+    <Content Include="Themes\NopGadget\Views\_ViewImports.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Themes\NopGadget\theme.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Views\NopGadget\" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MvcSiteMapProvider.MVC5.Core" Version="4.6.26" />
+    <Compile Update="Areas\Admin\Controllers\ThemeNopGadgetController.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Areas\Admin\Models\ConfigurationModel.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Areas\Admin\Models\NopGadgetSettingModel.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Components\NopGadgetThemeSettingsViewComponent.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Domain\NopGadgetSettings.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Infrastructure\NopStartup.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Services\NopGadgetThemeProvider.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Services\NopGadgetThemeSettings.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Areas\Admin\Controllers\NopGadgetController.cs">
+    <None Update="Areas\Admin\Views\ThemeNopGadget\Configure.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Areas\Admin\Infrastructure\AdminStartup.cs">
+    </None>
+    <None Update="Areas\Admin\Views\ThemeNopGadget\_Configure.ButtonColor.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Areas\Admin\Models\ThemeSettingsModel.cs">
+    </None>
+    <None Update="Areas\Admin\Views\ThemeNopGadget\_Configure.Color.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
+    </None>
+    <None Update="Areas\Admin\Views\ThemeNopGadget\_Configure.General.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Areas\Admin\Views\_ViewImports.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Themes\NopGadget\Views\Shared\Components\NopGadgetThemeSettings\Default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Themes\NopGadget\Views\_ViewStart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <!-- This target execute after "Build" target -->
   <Target Name="NopTarget" AfterTargets="Build">
     <!-- Delete unnecessary libraries from plugins path -->
     <MSBuild Projects="@(ClearPluginAssemblies)" Properties="PluginPath=$(OutDir)" Targets="NopClear" />
   </Target>
+  
+    
+  <ItemGroup>
+  <Content Include="Themes\NopGadget\preview.png" CopyToOutputDirectory="PreserveNewest" />
+  <Content Include="Themes\NopGadget\theme.json" CopyToOutputDirectory="PreserveNewest" />
+</ItemGroup>
+<Target Name="CopyThemeFiles" AfterTargets="Build">
+  <ItemGroup>
+    <ThemeFiles Include="Themes\NopGadget\**\*" />
+  </ItemGroup>
+  <Copy SourceFiles="@(ThemeFiles)" DestinationFolder="$(SolutionDir)Presentation\Nop.Web\Themes\NopGadget\%(RecursiveDir)" SkipUnchangedFiles="true" />
+</Target>
 </Project>

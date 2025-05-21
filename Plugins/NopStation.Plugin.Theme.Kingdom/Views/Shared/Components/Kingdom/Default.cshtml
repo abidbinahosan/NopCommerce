@@ -1,0 +1,167 @@
+﻿@inject KingdomSettings kingdomSettings
+@using System.Globalization
+
+@if (kingdomSettings.EnableCarouselsForDefaultEntityLists)
+{
+    NopHtml.AddPageCssClassParts("default-carousels-activated");
+
+    <script asp-location="Footer">
+        var myCustomSlider = document.querySelectorAll('.product-swiper');
+        for (var i = 0; i < myCustomSlider.length; i++) {
+            myCustomSlider[i].classList.add('product-swiper-' + i);
+            var productSwiperSelect = ".product-swiper-" + i + " " + ".swiper";
+            var defaultProductSwiper = new Swiper(productSwiperSelect, {
+                slidesPerView: "auto",
+                observer: true,
+                observeParents: true,
+                loop: @kingdomSettings.EnableCarouselLoop.ToString().ToLower(),
+                on: {
+                    init: function (swiper) {
+                        $(document).trigger({ type: "swiper_initialized", swiper: swiper });
+                    },
+                },
+        @if (kingdomSettings.EnableCarouselAutoPlay)
+        {
+            <text>
+                    autoplay: {
+                    delay: @kingdomSettings.CarouselAutoPlayTimeout,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: @kingdomSettings.CarouselAutoPlayHoverPause.ToString().ToLower(),
+                },
+            </text>
+        }
+        @if (kingdomSettings.EnableCarouselPagination)
+        {
+            <text>
+                    pagination: {
+                    el: ".product-swiper-" + i + " " + " .swiper-pagination",
+                    type: "@(kingdomSettings.PaginationType.ToString().ToLower())",
+                    dynamicBullets: @kingdomSettings.CarouselPaginationDynamicBullets.ToString().ToLower(),
+                    dynamicMainBullets: @kingdomSettings.CarouselPaginationDynamicMainBullets,
+                    clickable: @kingdomSettings.CarouselPaginationClickable.ToString().ToLower()
+                                                    },
+            </text>
+        }
+        @if (kingdomSettings.EnableCarouselNavigation)
+        {
+            <text>
+                    navigation: {
+                    nextEl: ".product-swiper-" + i + " " + ".swiper-button-next",
+                    prevEl: ".product-swiper-" + i + " " + ".swiper-button-prev",
+                },
+            </text>
+        }
+                        });
+                }
+
+
+        new Swiper(".home-page-categories", {
+            slidesPerView: "auto",
+            direction: 'horizontal',
+            loop: @kingdomSettings.EnableCarouselLoop.ToString().ToLower(),
+            loopFillGroupWithBlank: true,
+            on: {
+                init: function (swiper) {
+                    $(document).trigger({ type: "swiper_initialized", swiper: swiper });
+                },
+            },
+        @if (kingdomSettings.EnableCarouselAutoPlay)
+        {
+            <text>
+                autoplay: {
+                delay: @kingdomSettings.CarouselAutoPlayTimeout,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: @kingdomSettings.CarouselAutoPlayHoverPause.ToString().ToLower(),
+            },
+            </text>
+        }
+        @if (kingdomSettings.EnableCarouselPagination)
+        {
+            <text>
+                pagination: {
+                el: ".home-page-categories .swiper-pagination",
+                type: "@(kingdomSettings.PaginationType.ToString().ToLower())",
+                dynamicBullets: @kingdomSettings.CarouselPaginationDynamicBullets.ToString().ToLower(),
+                dynamicMainBullets: @kingdomSettings.CarouselPaginationDynamicMainBullets,
+                clickable: @kingdomSettings.CarouselPaginationClickable.ToString().ToLower()
+                                        },
+            </text>
+        }
+        @if (kingdomSettings.EnableCarouselNavigation)
+        {
+            <text>
+                navigation: {
+                nextEl: ".home-page-categories .swiper-button-next",
+                prevEl: ".home-page-categories .swiper-button-prev",
+            },
+            </text>
+        }
+                });
+    </script>
+}
+
+@if (kingdomSettings.EnableStickyHeader)
+{
+    NopHtml.AppendPageCssClassParts("sticky-header-added");
+
+    <script asp-location="Footer">
+        $(document).ready(function () {
+
+            var stickyHeaderPosition = $(".sticky-header-added .master-header .megamenu-wrapper").offset().top
+            var stickyHeaderHeight = $(".sticky-header-added .master-header").height()
+            var headerHeight = $(".header").height();
+            var headerMenuTop = $(".header-menu").offset().top;
+            var lastScrollTop = 0, delta = 5;
+
+            $(window).on("scroll", function (e) {
+                e.stopPropagation();
+                var nowScrollTop = $(this).scrollTop();
+
+                if ($(this).scrollTop() < stickyHeaderHeight) {
+                    if (nowScrollTop > lastScrollTop) {
+                        $(".sticky-header-added .master-header .header").addClass("no-animation")
+                    } else {
+                        $(".sticky-header-added .master-header .header").css("margin-top", 0)
+                        $(".sticky-header-added .master-header .header").removeClass("no-animation");
+                    }
+                } else {
+                    $(".sticky-header-added .master-header .header").removeClass("no-animation");
+                }
+
+                if ($(document).scrollTop() > 0) {
+                    $(".sticky-header-added .master-header").addClass("stick")
+                    $(".sticky-header-added .master-wrapper-page").css("padding-top", stickyHeaderHeight);
+                    if ($(window).width() > 1200) {
+                        if (Math.abs(lastScrollTop - nowScrollTop) >= delta) {
+                            if ($(this).scrollTop() > stickyHeaderHeight && nowScrollTop > lastScrollTop) {
+                                $(".sticky-header-added .master-header .header").css("margin-top", - $(".header").height())
+                            } else {
+                                $(".sticky-header-added .master-header .header").css("margin-top", 0)
+                            }
+                        }
+                    }
+
+                } else {
+                    $(".sticky-header-added .master-header .header").css("margin-top", 0)
+                    $(".sticky-header-added .master-wrapper-page").css("padding-top", "0");
+                    $(".sticky-header-added .master-header").removeClass("stick");
+                }
+                lastScrollTop = nowScrollTop;
+            })
+        })
+    </script>
+}
+
+@if (kingdomSettings.EnableImageLazyLoad)
+{
+    NopHtml.AppendScriptParts(ResourceLocation.Footer, "~/Plugins/NopStation.Plugin.Theme.Kingdom/Content/js/lazyload.js");
+    <script asp-location="Footer">
+        new LazyLoad();
+        $(document).ajaxStop(function () {
+            new LazyLoad();
+        });
+        $(document).on('swiper_initialized', function () {
+            new LazyLoad();
+        });
+    </script>
+}

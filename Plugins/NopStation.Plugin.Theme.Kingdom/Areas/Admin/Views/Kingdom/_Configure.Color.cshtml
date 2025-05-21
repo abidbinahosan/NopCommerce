@@ -1,0 +1,43 @@
+﻿@model ConfigurationModel
+
+<div class="card-body">
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="PrimaryThemeColor_OverrideForStore" asp-input="PrimaryThemeColor" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="PrimaryThemeColor" />
+        </div> 
+        <div class="col-md-9">
+            <nop-editor asp-for="PrimaryThemeColor" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="SecondaryThemeColor_OverrideForStore" asp-input="SecondaryThemeColor" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="SecondaryThemeColor" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="SecondaryThemeColor" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="CategoryEvenColor_OverrideForStore" asp-input="CategoryEvenColor" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="CategoryEvenColor" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for ="CategoryEvenColor" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="CategoryOddColor_OverrideForStore" asp-input="CategoryOddColor" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="CategoryOddColor" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="CategoryOddColor" />
+        </div>
+    </div>
+</div>

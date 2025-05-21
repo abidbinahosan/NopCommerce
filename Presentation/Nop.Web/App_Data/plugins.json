@@ -44,14 +44,6 @@
       "Version": "4.80.6"
     },
     {
-      "SystemName": "MultiFactorAuth.GoogleAuthenticator",
-      "Version": "4.80.4"
-    },
-    {
-      "SystemName": "Payments.AmazonPay",
-      "Version": "4.80.8"
-    },
-    {
       "SystemName": "Payments.CheckMoneyOrder",
       "Version": "4.80.3"
     },
@@ -72,14 +64,6 @@
       "Version": "4.80.4"
     },
     {
-      "SystemName": "Shipping.UPS",
-      "Version": "4.80.5"
-    },
-    {
-      "SystemName": "Tax.Avalara",
-      "Version": "4.80.7"
-    },
-    {
       "SystemName": "Tax.FixedOrByCountryStateZip",
       "Version": "4.80.3"
     },
@@ -96,10 +80,6 @@
       "Version": "4.80.1"
     },
     {
-      "SystemName": "ExternalAuth.Facebook",
-      "Version": "4.80.5"
-    },
-    {
       "SystemName": "NopStation.Core",
       "Version": "4.80.2.0"
     },
@@ -109,6 +89,12 @@
     }
   ],
   "PluginNamesToUninstall": [],
-  "PluginNamesToDelete": [],
+  "PluginNamesToDelete": [
+    "ExternalAuth.Facebook",
+    "MultiFactorAuth.GoogleAuthenticator",
+    "Payments.AmazonPay",
+    "Shipping.UPS",
+    "Tax.Avalara"
+  ],
   "PluginNamesToInstall": []
 }

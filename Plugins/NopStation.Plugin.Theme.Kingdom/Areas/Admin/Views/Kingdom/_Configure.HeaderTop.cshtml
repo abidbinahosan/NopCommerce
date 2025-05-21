@@ -1,0 +1,138 @@
+﻿@model ConfigurationModel
+
+<div class="card-body">
+    <div class="card card-default">
+        <div class="card-header">
+            @T("Admin.NopStation.Theme.Kingdom.Configuration.HeaderMenuOne")
+        </div>
+        <div class="card-body">
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-override-store-checkbox asp-for="EnableHeaderMenuOne_OverrideForStore" asp-input="EnableHeaderMenuOne" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="EnableHeaderMenuOne" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="EnableHeaderMenuOne" />
+                </div>
+            </div>
+
+            <nop-nested-setting asp-for="EnableHeaderMenuOne">
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="HeaderMenuOneIconPictureId_OverrideForStore" asp-input="HeaderMenuOneIconPictureId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="HeaderMenuOneIconPictureId" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="HeaderMenuOneIconPictureId" />
+                    </div>
+                </div>
+
+            @(await Html.LocalizedEditorAsync<ConfigurationModel, ConfigurationLocalizedModel>("header-top-One-settings-localized",
+                    @<div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-override-store-checkbox asp-for="HeaderMenuOneTitle_OverrideForStore" asp-input="@Model.Locales[item].HeaderMenuOneTitle" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                    <nop-label asp-for="@Model.Locales[item].HeaderMenuOneTitle" />
+                                </div>
+                                <div class="col-md-9">
+                                    <nop-editor asp-for="@Model.Locales[item].HeaderMenuOneTitle" />
+                                </div>
+                            </div>
+                            <input type="hidden" asp-for="@Model.Locales[item].LanguageId" />
+                        </div>
+                    ,
+                    @<div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-override-store-checkbox asp-for="HeaderMenuOneTitle_OverrideForStore" asp-input="HeaderMenuOneTitle" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                    <nop-label asp-for="HeaderMenuOneTitle" />
+                                </div>
+                                <div class="col-md-9">
+                                    <nop-editor asp-for="HeaderMenuOneTitle" />
+                                </div>
+                            </div>
+                        </div>
+                    @*,
+                    //localizable settings per store (overridden store settings) are not supported yet
+                    true*@
+                    ))
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="HeaderMenuOneLink_OverrideForStore" asp-input="HeaderMenuOneLink" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="HeaderMenuOneLink" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="HeaderMenuOneLink" />
+                    </div>
+                </div>
+            </nop-nested-setting>
+        </div>
+    </div>
+    <div class="card card-default">
+        <div class="card-header">
+            @T("Admin.NopStation.Theme.Kingdom.Configuration.HeaderMenuTwo")
+        </div>
+        <div class="card-body">
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-override-store-checkbox asp-for="EnableHeaderMenuTwo_OverrideForStore" asp-input="EnableHeaderMenuTwo" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="EnableHeaderMenuTwo" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="EnableHeaderMenuTwo" />
+                </div>
+            </div>
+
+            <nop-nested-setting asp-for="EnableHeaderMenuTwo">
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="HeaderMenuTwoIconPictureId_OverrideForStore" asp-input="HeaderMenuTwoIconPictureId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="HeaderMenuTwoIconPictureId" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="HeaderMenuTwoIconPictureId" />
+                    </div>
+                </div>
+
+                @(await Html.LocalizedEditorAsync<ConfigurationModel, ConfigurationLocalizedModel>("header-top-Two-settings-localized",
+                    @<div>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <nop-override-store-checkbox asp-for="HeaderMenuTwoTitle_OverrideForStore" asp-input="@Model.Locales[item].HeaderMenuTwoTitle" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                <nop-label asp-for="@Model.Locales[item].HeaderMenuTwoTitle" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="@Model.Locales[item].HeaderMenuTwoTitle" />
+                            </div>
+                        </div>
+                        <input type="hidden" asp-for="@Model.Locales[item].LanguageId" />
+                    </div>
+                    ,
+                    @<div>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <nop-override-store-checkbox asp-for="HeaderMenuTwoTitle_OverrideForStore" asp-input="HeaderMenuTwoTitle" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                <nop-label asp-for="HeaderMenuTwoTitle" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="HeaderMenuTwoTitle" />
+                            </div>
+                        </div>
+                    </div>
+                    @*,
+                    //localizable settings per store (overridden store settings) are not supported yet
+                    true*@
+                    ))
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="HeaderMenuTwoLink_OverrideForStore" asp-input="HeaderMenuTwoLink" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="HeaderMenuTwoLink" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="HeaderMenuTwoLink" />
+                    </div>
+                </div>
+            </nop-nested-setting>
+        </div>
+    </div>
+</div>

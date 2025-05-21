@@ -1,0 +1,10 @@
+﻿@model KingdomSocialModel
+
+@if (!string.IsNullOrWhiteSpace(Model.InstagramLink))
+{
+    <li class="instagram"><a href="@Model.InstagramLink" target="_blank" rel="noopener noreferrer">@T("NopStation.Theme.Kingdom.Footer.FollowUs.Instagram")</a></li>
+}
+@if (!string.IsNullOrWhiteSpace(Model.PinterestLink))
+{
+    <li class="pinterest"><a href="@Model.PinterestLink" target="_blank" rel="noopener noreferrer">@T("NopStation.Theme.Kingdom.Footer.FollowUs.Pinterest")</a></li>
+}

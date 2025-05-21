@@ -1,5 +1,5 @@
 {
-  "Group": "Nop-Station",
+  "Group": "Theme",
   "FriendlyName": "Nop-Station NopGadget Theme",
   "SystemName": "NopStation.Plugin.Theme.NopGadget",
   "Version": "4.80.1.0",
@@ -8,5 +8,5 @@
   "DisplayOrder": 1,
   "FileName": "NopStation.Plugin.Theme.NopGadget.dll",
   "Description": "This plugin allows to configure NopStation NopGadget theme.",
-  "DependsOnSystemNames": [ "NopStation.Core" ]
+  "Theme": true
 }

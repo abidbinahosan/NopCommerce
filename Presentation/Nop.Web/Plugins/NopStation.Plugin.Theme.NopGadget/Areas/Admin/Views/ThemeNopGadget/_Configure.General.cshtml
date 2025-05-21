@@ -1,0 +1,16 @@
+﻿@model NopStation.Plugin.Theme.NopGadget.Areas.Admin.Models.ConfigurationModel
+
+<div class="card-body">
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="EnableCustomBanner" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="EnableCustomBanner" />
+            <span asp-validation-for="EnableCustomBanner"></span>
+            <div class="form-text">
+                @T("Admin.NopStation.Theme.NopGadget.Fields.EnableCustomBanner.Hint")
+            </div>
+        </div>
+    </div>
+</div>
